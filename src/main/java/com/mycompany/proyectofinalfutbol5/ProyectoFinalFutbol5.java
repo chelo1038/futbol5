@@ -5,14 +5,13 @@ import javax.swing.JOptionPane;
 public class ProyectoFinalFutbol5 {
 
     public static void main(String[] args) {
-        // Inicialización de jugadores y equipos
-        Jugadores.inicializarJugadores();  // Inicializa los jugadores
-        Equipos.inicializarJugadoresYAsignarEquipos();  // Inicializa los equipos y asigna jugadores
+
+        Jugadores.inicializarJugadoresYAsignarEquipos();
 
         boolean ejecutar = true;
 
         while (ejecutar) {
-            // Menú de opciones
+
             String mensaje = "Seleccione una opción:";
             String[] opciones = {
                 "1- Gestión de jugadores🏃",
@@ -33,21 +32,22 @@ public class ProyectoFinalFutbol5 {
 
             switch (codigo) {
                 case 0:
-                    GestionJugadores.gestionJugadores();  // Menú de gestión de jugadores
+                    GestionJugadores.gestionJugadores();
                     break;
                 case 1:
-                    GestionEquipo.gestionEquipos();  // Menú de gestión de equipos
+                    GestionEquipo.gestionEquipos();
                     break;
                 case 2:
-                    // Simulación de partidos (pendiente de implementación)
+                    SimulacionPartidos.simularPartido();
                     JOptionPane.showMessageDialog(null, "Simulación de partidos en desarrollo.");
                     break;
                 case 3:
                     JOptionPane.showMessageDialog(null, "Generando reportes...");
+                     Reportes.generarTablaEstadisticasEquipos(DatosGenerales.equipos);
                     break;
                 case 4:
                     JOptionPane.showMessageDialog(null, "Saliendo del sistema, ¡hasta luego!");
-                    ejecutar = false;  // Termina el bucle y sale del programa
+                    ejecutar = false;
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Si desea salir, seleccione la opción 5.");
